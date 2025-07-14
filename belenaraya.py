@@ -15,21 +15,6 @@ stock = {'8475HD': [387990,10], '2175HD': [327990,4], 'JjfFHD': [424990,1],
  'fgdxFHD': [664990,21], '123FHD': [290890,32], '342FHD': [444990,7],
  'GF75HD': [749990,2], 'UWU131HD': [349990,1], 'FS1230HD': [249990,0],}
 
-def menu():
-    print('''
-        *** Menu principal ***
-        ----------------------
-                  
-            1. stock marca
-            2. busqueda por precio
-            3. actualizar precio
-            4. salir
-          
-          ''')
-    
-    op=input_num("Ingrese una opción entre 1 y 4: ",1,4)
-    return op
-
     def(stock_marca):
         print("Stock Marca")
         print("--------------\n")
@@ -71,7 +56,8 @@ def menu():
                     print("Error, el modelo no existe!")  
 
         def(salir):
-        print("fin del programa") 
+        print("fin del programa")
+        breaK
 
 
 def input_num(pregunta,li,ls):
@@ -85,15 +71,30 @@ def input_num(pregunta,li,ls):
         except:
             print("Error, debe ingresar sólo números.")
 
+def menu():
+    print('''
+        *** Menu principal ***
+        ----------------------
+                  
+            1. stock marca
+            2. busqueda por precio
+            3. actualizar precio
+            4. salir
+          
+          ''')
+    
+    op=input_num("Ingrese una opción entre 1 y 4: ",1,4)
+    return op
+
 
 while True:
     cls()
     opcion=menu() 
     cls()
     match opcion:
-        case 1: listar()
-        case 2: buscar()
-        case 3: modificar()
+        case 1: stock_marca()
+        case 2: busqueda por precio()
+        case 3: actualizar precio()
         case 4: break
     os.system("pause")
 
