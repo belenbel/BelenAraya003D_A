@@ -33,11 +33,11 @@ def menu():
     def(stock_marca):
         print("Stock Marca")
         print("--------------\n")
-
-    
-    for stock_marca(marca) in productos:
-        if stock_marca[""] == productos:
-            pass
+        marca = input("Ingrese la marca: ")
+        for stock_marca(marca) in productos:
+            if marca[""] == productos:
+            print("datos encontrados: ")
+            print(f"{productos[i]["marca"]}")
 
 
         def(busqueda_por_precio): 
@@ -46,31 +46,45 @@ def menu():
             stock = input("Ingrese el precio a buscar:  ")
             for precio in stock:
                 if precio[""] == stock:
-                    print("Datos encontrados: {marca} - {modelo}")
+                    print("Datos encontrados:")
+                    print(f" {productos[i]["marca"]} {productos[i]["modelo"]}")
                     print(f"") 
                     return
                 else:
                     ("debe entregar valores enteros!!")
 
-        def(actualizar_precio):
-        print("------------------\n")
-        modelo = input("Ingrese el modelo: ")
-        sw=0 #no existe el modelo
-        for i in range(len(stock)):
-            if stock[i]["modelo"] == modelo:
-                print("el modelo existe, los datos son: ")
-                print(f" {stock[i]["modelo"]} {stock[i]["precio"]}")
-                sw=1 
-                nuevo_precio = input("Ingrese el nuevo precio: ")
-                       
-                stock[i]["precio"] = nuevo_precio
-           
-                print("Listo! precio actualizado!")
-            if sw==0: 
-                print("Error, el modelo no existe!")  
+            def(actualizar_precio):
+            print("------------------\n")
+            modelo = input("Ingrese el modelo: ")
+            sw=0 #no existe el modelo
+            for i in range(len(stock)):
+                if stock[i]["modelo"] == modelo:
+                    print("el modelo existe, los datos son: ")
+                    print(f" {stock[i]["modelo"]} {stock[i]["precio"]}")
+                    sw=1 
+                    nuevo_precio = input("Ingrese el nuevo precio: ")
+                        
+                    stock[i]["precio"] = nuevo_precio
+            
+                    print("Listo! precio actualizado!")
+                if sw==0: 
+                    print("Error, el modelo no existe!")  
 
         def(salir):
         print("fin del programa") 
+
+
+def input_num(pregunta,li,ls):
+    while True:
+        try:
+            n=int(input(pregunta))
+            if n>=li and n<=ls:
+                return n
+            else:
+                print(f"Error, debe ingresar un número entre {li} y {ls}")
+        except:
+            print("Error, debe ingresar sólo números.")
+
 
 while True:
     cls()
